@@ -19,7 +19,6 @@ body {
 * {
     font-family: "Press Start 2P", sans-serif;
     font-weight: 400;
-    background-color: black;
 }
 
 
@@ -103,6 +102,29 @@ div > button {
     z-index: 6;
 }
 
+.palm {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 50vh;
+}
+
+#palm-1 {
+    left: 35%;
+    animation: 20s ease-in 1s infinite normal none running fly-by-left;
+}
+
+#palm-2 {
+    left: 65%;
+    animation: 25s ease-in 2s infinite normal none running fly-by-right;
+}
+
+#palm-3 {
+    left: 60%;
+    top: 50vh;
+    animation: 24s ease-in 3.1s infinite normal none running fly-by-right;
+}
+
 #bg-animation {
     position: absolute;
     z-index: -3;
@@ -130,3 +152,18 @@ div > button {
 .star {
     fill: white;
 }
+
+@keyframes roll-out {
+    0% { transform: translateY(0%) scale(0.5); }
+    100% { transform: translateY(100%) scale(25) translateZ(100px); }
+}
+
+
+@keyframes fly-by-right {
+    100% { transform: translateY(300%) translateX(100000%) scale(500) rotateX(10deg); }
+}
+
+@keyframes fly-by-left {
+    100% { transform: translateY(300%) translateX(-100000%) scale(500) rotateX(10deg); }
+}
+
